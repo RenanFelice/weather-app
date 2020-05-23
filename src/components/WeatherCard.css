@@ -1,0 +1,71 @@
+.card{
+    display: flex;
+    padding: 30px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+    transition: all 0.3s cubic-bezier(.25,.8,.25,1);
+
+}
+
+.card-img-top{
+    width: 8rem;
+}
+
+.card-city-desc{
+    font-weight: 700;
+}
+
+.card:hover {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+    transform: translateY(-4px);
+}
+
+.card-temp-container{
+    display: flex;
+    align-items: center;
+}
+
+.card-temp-info{
+    margin-left: 1rem;
+    margin-bottom: 0;
+    font-size: 4rem;
+    font-weight: 700;
+}
+.card-temp-description{
+    margin-bottom: 0;
+    margin-left: 1rem;
+}
+
+.fa-location-arrow{
+    
+    margin-right: 1rem;
+}
+
+.card-city{
+    color: rgb(56, 56, 233);
+    font-weight: 700;
+}
+
+.card-extra-info{
+    display: flex;
+    justify-content: space-between;
+}
+
+.card-extra-info div {
+    font-weight: 700;
+    color: rgb(131, 131, 131);
+    margin-top: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+}
+
+.card-extra-info div p {
+    margin-bottom: 0;
+    
+    
+}
+
