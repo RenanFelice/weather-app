@@ -4,10 +4,18 @@ import './WeatherCard.css'
 
 const WeatherCard = () => {
     const { dados } = useContext(WeatherCardContext)
-    console.log(dados)
+    let notCity;
+    if (!dados){
+        notCity = 'Digite uma cidade para iniciar'
+    } else {
+        if(dados.cod === '404') notCity = 'Cidade não encontrada, digite novamente'
+    }
+    
+    
     return (
         <div>
-            {dados ?
+
+            {dados && notCity !== 'Cidade não encontrada, digite novamente'  ?
                 <div className="card">
                     <h5 className="card-city-desc"> Tempo agora em... </h5>
                     <h3 className="card-city"><i className="fas fa-location-arrow"></i>{dados.city.name} - {dados.city.country} </h3>
@@ -39,7 +47,7 @@ const WeatherCard = () => {
                     </div>
 
                 </div>
-                : <h1>fetching</h1>}
+                : <h1>{notCity}</h1>}
         </div>
 
 

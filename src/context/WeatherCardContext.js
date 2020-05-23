@@ -1,21 +1,24 @@
-import React, {createContext, useState, useEffect} from 'react';
+import React, {createContext, useState} from 'react';
 
 export const WeatherCardContext = createContext()
 
 const WeatherCardProvider = (props) => {
     const [dados, setDados] = useState()
-    const weatherUrl = 'http://api.openweathermap.org/data/2.5/forecast?id=3449701&units=metric&APPID=e1e6c46a413f8e705380a3b99caacb6e'
+    
 
-    const weatherFetch = async url => {
-        await fetch(url).then(resp => resp.json()).then(data => setDados(data))
+    const weatherFetch = async city => {
+        try{
+            const weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=e1e6c46a413f8e705380a3b99caacb6e`
+            await fetch(weatherUrl).then(resp => resp.json()).then(data => setDados(data))
+        } catch(e){
+            alert(e, 'deu ruim')
+        }
+        
     }
     
-    useEffect(() => {
-        weatherFetch(weatherUrl)
-    }, [])
    
     return ( 
-        <WeatherCardContext.Provider value={{dados}}>
+        <WeatherCardContext.Provider value={{dados, weatherFetch}}>
             {props.children}
         </WeatherCardContext.Provider>
      );
