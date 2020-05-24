@@ -14,9 +14,14 @@ function App() {
     <div className="App">
       <WeatherCardProvider>
         <NavBar />
-        <SearchForm />
+        
         <Switch>
-          <Route exact path='/' component={WeatherCard}/>
+          <Route exact path='/' render={(routProps) => (
+            <>
+            <SearchForm />
+            <WeatherCard/>
+            </>
+          )}/>
           <Route exact path='/:weatherdetails' render={(routeProps) => <WeatherDetails {...routeProps}/>} />
         </Switch>
         

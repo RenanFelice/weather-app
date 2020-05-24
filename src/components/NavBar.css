@@ -7,38 +7,12 @@
     
 }
 
-.la, .cb {
-    height: 1.1rem;
-    border-radius: 0.55em;
-    
+.home-link{
+  margin: 0 2rem;
+}
+
+@media(max-width:991px){
+  .home-link{
+    margin: 0;
   }
-  
-  .la {
-    width: 2.5em;
-    background: #dadada;
-    display: inline-block;
-  }
-  
-  .cb {
-    margin: 0px;
-    transition: 0.15s ease-in;
-    background: #cc6666;
-    font-size: 1em;
-    width: 1em;
-    outline: none;
-    -webkit-appearance: none;
-    
-  }
-  .cb:checked{
-    
-        background: #66cc66;
-        margin-left: 1.5em;
-      
-  }
-  
-  .la {
-    position: absolute;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-  }
+}
