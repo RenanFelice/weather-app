@@ -4,11 +4,12 @@ import './WeatherCard.css'
 import { Link } from "react-router-dom";
 
 const WeatherCard = () => {
-    const { dados, unit, isFetching } = useContext(WeatherCardContext)
+    const { dados, unit, isFetching, weatherForecastFetch, city } = useContext(WeatherCardContext)
     const result = <div>
+    
 
     {dados && dados.cod !== '404' ?
-        <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={`${dados.name}`}>
+        <Link onClick={e => weatherForecastFetch(city, unit)} style={{ color: 'inherit', textDecoration: 'inherit' }} to={`${dados.name}`}>
             <div className="card">
                 <h5 className="card-city-desc"> Tempo agora em... </h5>
                 <h3 className="card-city"><i className="fas fa-location-arrow"></i>{dados.name} - {dados.sys.country} </h3>
