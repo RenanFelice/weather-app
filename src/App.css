@@ -3,4 +3,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background: rgb(40,99,80);
+background: linear-gradient(210deg, rgba(40,99,80,0.4514180672268907) 0%, rgba(255,255,255,0.28335084033613445) 48%, rgba(86,167,231,0.4738270308123249) 100%, rgba(86,167,231,0.44861694677871145) 100%);
 }
