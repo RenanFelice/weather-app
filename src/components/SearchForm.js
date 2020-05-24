@@ -3,15 +3,19 @@ import './SearchForm.css'
 import { WeatherCardContext } from '../context/WeatherCardContext'
 
 const SearchForm = () => {
-    const [city, setCity] = useState('')
-    const {weatherFetch} = useContext(WeatherCardContext)
+    const [formCity, setFormCity] = useState('')
+    const {weatherFetch, unit, setCity} = useContext(WeatherCardContext)
+    
+
     return (
     <div className='SearchForm'>
         <form onSubmit={e =>{
             e.preventDefault()
-            weatherFetch(city)
+            setCity(formCity)
+            weatherFetch(formCity, unit)
+            setFormCity('')
         }}>
-        <input value={city} onChange={e => setCity(e.target.value)} className="form-control form-control-lg" type="text" placeholder="Busque uma cidade."/>
+        <input value={formCity} onChange={e => setFormCity(e.target.value)} className="form-control form-control-lg" type="text" placeholder="Busque uma cidade..."/>
         </form>
     </div>);
 }
