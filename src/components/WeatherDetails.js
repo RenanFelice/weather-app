@@ -43,8 +43,8 @@ const WeatherDetails = () => {
                                     <p><span>{monthDay} </span> de {month[monthIdx]}<span>{}</span></p>
                                     <div className='WeatherDetails-card-date'>
 
-                                        <p>{daysOfWeek[dateDay]}</p> <p className='hifen'>-</p>
-                                        <p><span>{dateHour}</span>:<span>{dateMinute}</span></p>
+                                        <p>{daysOfWeek[dateDay]} </p> <p className='hifen'> - </p>
+                                        <p><span> {dateHour}</span>:<span>{dateMinute}</span></p>
                                     </div>
                                     <img className="card-img-top" alt={item.weather[0].description} src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} />
                                     <div className='WeatherDetails-card-temp'>
