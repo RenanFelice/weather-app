@@ -1,7 +1,6 @@
 import React, { useContext, useState } from 'react';
 import './NavBar.css'
 import { WeatherCardContext } from '../context/WeatherCardContext'
-import { Link } from "react-router-dom";
 
 const NavBar = () => {
     const [formCity, setFormCity] = useState('')
@@ -9,9 +8,9 @@ const NavBar = () => {
     return (
 
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-            <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/'}>
-                <span className="navbar-brand" href="/"><i className="fas fa-cloud-sun"></i></span>
-            </Link>
+
+            <a className="navbar-brand" href="/"><i className="fas fa-cloud-sun"></i></a>
+
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
             </button>
@@ -19,9 +18,9 @@ const NavBar = () => {
             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul className="navbar-nav mr-auto">
                     <li className="nav-item active">
-                        <Link style={{ color: 'inherit', textDecoration: 'inherit' }} to={'/'}>
-                            <span className="nav-link home-link" href="/">Home <span className="sr-only">(current)</span></span>
-                        </Link>
+
+                        <a className="nav-link home-link" href="/">Home <span className="sr-only">(current)</span></a>
+
                     </li>
                     <li className="nav-item dropdown">
                         <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
