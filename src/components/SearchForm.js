@@ -14,6 +14,7 @@ const SearchForm = () => {
             setCity(formCity)
             weatherFetch(formCity, unit)
             setFormCity('')
+            e.target.blur()
         }}>
         <input value={formCity} onChange={e => setFormCity(e.target.value)} className="form-control form-control-lg" type="text" placeholder="Busque uma cidade..."/>
         </form>
