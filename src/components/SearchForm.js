@@ -10,14 +10,20 @@ const SearchForm = () => {
     return (
     <div className='SearchForm'>
         <form onSubmit={e =>{
-            console.log(e)
+            
             e.preventDefault()
+            if(!formCity) return
             setCity(formCity)
             weatherFetch(formCity, unit)
             setFormCity('')
-            e.currentTarget.blur()
+            e.target.querySelector('.form-control-lg').blur()
+
+            
         }}>
-        <input value={formCity} onChange={e => setFormCity(e.target.value)} className="form-control form-control-lg" type="text" placeholder="Busque uma cidade..."/>
+        <input  value={formCity} onChange={e => {
+
+            setFormCity(e.target.value)
+        }} className="form-control form-control-lg" type="text" placeholder="Busque uma cidade..."/>
         </form>
     </div>);
 }
