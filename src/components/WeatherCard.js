@@ -44,7 +44,7 @@ const WeatherCard = () => {
         </Link>
         : <div className='city-notfound'>
             <h3>Cidade não Encontrada</h3>
-            <img className='city-notfound-img' src={require('../notfoundbg.png')} />
+            <img className='city-notfound-img' alt='notfoundbg' src={require('../notfoundbg.png')} />
         </div>
     }
 </>
