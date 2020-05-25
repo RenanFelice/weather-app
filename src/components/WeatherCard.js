@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const WeatherCard = () => {
     const { dados, unit, isFetching, weatherForecastFetch, city } = useContext(WeatherCardContext)
-    const result = <div>
+    const result = <>
     
 
     {dados && dados.cod !== '404' ?
@@ -42,14 +42,15 @@ const WeatherCard = () => {
 
             </div>
         </Link>
-        : <div>
-            <h1>Cidade não Encontrada</h1>
+        : <div className='city-notfound'>
+            <h3>Cidade não Encontrada</h3>
+            <img className='city-notfound-img' src={require('../notfoundbg.png')} />
         </div>
     }
-</div>
+</>
 
     return (          
-           <div>{isFetching ? <div className="loader">Loading...</div> : result}</div>      
+           <>{isFetching ? <div className="loader">Loading...</div> : result}</>      
     );
 }
 
