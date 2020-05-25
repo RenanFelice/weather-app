@@ -12,7 +12,7 @@ const WeatherCardProvider = (props) => {
     const weatherFetch = async (city, unit) => {
         try{
             setIsFetching(true)
-            const weatherUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&APPID=e1e6c46a413f8e705380a3b99caacb6e`
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&APPID=e1e6c46a413f8e705380a3b99caacb6e`
             await fetch(weatherUrl).then(resp => resp.json()).then(data => setDados(data))
             setIsFetching(false)
         } catch(e){
@@ -23,7 +23,7 @@ const WeatherCardProvider = (props) => {
     const weatherForecastFetch = async (city, unit) => {
         try{
             setIsFetching(true)
-            const weatherUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&APPID=e1e6c46a413f8e705380a3b99caacb6e`
+            const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&APPID=e1e6c46a413f8e705380a3b99caacb6e`
             await fetch(weatherUrl).then(resp => resp.json()).then(data => setForecastDados(data))
             setIsFetching(false)
         } catch(e){
