@@ -158,3 +158,26 @@
     }
   }
 
+@media(max-width:500px){
+  .card{
+    width: 350px;
+    height: 350px;
+    padding: 30px;
+  }
+  .card-temp-container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-temp-info{
+    margin: 0;
+  }
+  .card-temp-description{
+    margin: 0;
+  }
+  .card-extra-info{
+    display: none;
+  }
+  .card-img-top {
+    width: 8rem !important;
+  }
+}
