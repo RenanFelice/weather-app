@@ -13,7 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color:rgb(233, 233, 233);
+    background: rgb(40,99,80);
+    background: linear-gradient(210deg, rgba(40,99,80,0.4514180672268907) 0%, rgba(69,131,215,1) 48%, rgba(86,167,231,0.4738270308123249) 100%, rgba(86,167,231,0.44861694677871145) 100%);
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
 
@@ -156,5 +157,11 @@
     100% {
       -webkit-transform: rotate(360deg);
       transform: rotate(360deg);
+    }
+  }
+
+  @media(max-width:750px){
+    .display-country{
+      display: none;
     }
   }

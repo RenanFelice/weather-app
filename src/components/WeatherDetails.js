@@ -14,7 +14,7 @@ const WeatherDetails = () => {
             <>
                 <div className='WeatherDetails'>
                     <div className="mt-5 jumbotron">
-                        <h1 className="display-4">{forecastDados.city.name} - {forecastDados.city.country}</h1>
+                        <h1 className="display-4"><span className='display-city'>{forecastDados.city.name}</span>  <span className='display-country'>- {forecastDados.city.country}</span></h1>
                         <p className="lead">Previsão dos próximos 7 dias...</p>
                         
                         <p className="lead">
