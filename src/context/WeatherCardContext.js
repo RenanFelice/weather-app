@@ -33,7 +33,7 @@ const WeatherCardProvider = (props) => {
     }
     
     useEffect(e => {
-        
+        if(!city) return
         const fetcher = async () => await weatherFetch(city, unit)
         const fetcher2 = async () => await weatherForecastFetch(city, unit)
         fetcher()
