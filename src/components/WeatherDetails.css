@@ -59,7 +59,9 @@
     color: rgb(131, 131, 131);
 }
 
-
+.hifen{
+  margin: 0 4px !important;
+}
 
 .card-img-top{
     width: 5rem;

@@ -27,28 +27,25 @@ const WeatherDetails = () => {
                     </div>
                     <div className='WeatherDetails-CardList'>
                         {forecastDados.list.map(item => {
+                            // let teste = new Date('05/27/2020')
+                            // console.log(teste.getDay())
+                            // console.log(item.dt_txt)
                             let daysOfWeek = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', "Sáb"]
-                            let month = ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
-                            let dateDay = new Date(item.dt_txt).getDay()
-                            let dateHour = new Date(item.dt_txt).getHours().toString()
-                            let monthDay = new Date(item.dt_txt).getDate()
-                            let monthIdx = new Date(item.dt_txt).getMonth()
-                            if (dateHour.length === 1) {
-                                dateHour = "0" + dateHour
-                            }
-                            let dateMinute = new Date(item.dt_txt).getMinutes().toString()
-                            if (dateMinute.length === 1) {
-                                dateMinute = "0" + dateMinute
-                            }
-
-
+                            let month = [null, 'Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez']
+                            let monthIdx = item.dt_txt.slice(5, 7)
+                            let dateDay = item.dt_txt.slice(8, 10)
+                            let dateHour = item.dt_txt.slice(11,16)
+                            let dateWeek = new Date(`${monthIdx}/${dateDay}/${item.dt_txt.slice(0,5)}`)
+                            
+                            
+                            
                             return (
                                 <div key={uuidv4()} className="WeatherDetails-card">
-                                    <p><span>{monthDay} </span> de {month[monthIdx]}<span>{}</span></p>
+                                    <p><span>{dateDay} </span> de {month[parseInt(monthIdx)]}<span>{}</span></p>
                                     <div className='WeatherDetails-card-date'>
 
-                                        <p>{daysOfWeek[dateDay]} </p> <p className='hifen'> - </p>
-                                        <p><span> {dateHour}</span>:<span>{dateMinute}</span></p>
+                                        <p>{daysOfWeek[dateWeek.getDay()]} </p> <p className='hifen'> - </p>
+                                        <p>{dateHour}</p>
                                     </div>
                                     <img className="card-img-top" alt={item.weather[0].description} src={`http://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} />
                                     <div className='WeatherDetails-card-temp'>

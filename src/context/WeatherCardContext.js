@@ -6,7 +6,7 @@ const WeatherCardProvider = (props) => {
     const [dados, setDados] = useState()
     const [forecastDados, setForecastDados] = useState()
     const [unit, setUnit] = useState('Metric')
-    const [city, setCity] = useState('Santo André')
+    const [city, setCity] = useState('Santo Andre')
     const [isFetching, setIsFetching] = useState(false)
 
     const weatherFetch = async (city, unit) => {
