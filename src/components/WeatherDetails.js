@@ -8,7 +8,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 const WeatherDetails = () => {
     const { forecastDados } = useContext(WeatherCardContext)
-    console.log(forecastDados)
     let result;
 
     result =
@@ -18,9 +17,7 @@ const WeatherDetails = () => {
                 <div className='WeatherDetails'>
                     <div className="mt-5 jumbotron">
                         <h1 className="display-4">
-                            <span className='display-city'>{forecastDados.city.name}</span> 
-                            <span className='display-hifen'>-</span>  
-                            <span className='display-country'>{forecastDados.city.country}</span>
+                            {forecastDados.city.name} - {forecastDados.city.country}
                         </h1>
                         <p className="lead">Previsão dos próximos dias...</p>
 
