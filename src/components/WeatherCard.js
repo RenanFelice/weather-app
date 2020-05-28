@@ -12,7 +12,7 @@ const WeatherCard = () => {
                     <h5 className="card-city-desc"> Tempo agora em... </h5>
                     <h3 className="card-city"><i className="fas fa-location-arrow"></i>{dados.name} - {dados.sys.country} </h3>
                     <div className='card-temp-container'>
-                        <img className="card-img-top" alt={dados.weather[0].description} src={`http://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`} />
+                        <img className="card-img-top" alt={dados.weather[0].description} src={`https://openweathermap.org/img/wn/${dados.weather[0].icon}@2x.png`} />
                         <div className='card-temp-info'>
                             <h5 className="card-temp-info">{Math.round(dados.main.temp)}º {unit.toLowerCase() === 'metric' ? 'C' : 'F'}</h5>
                             <h5 className="card-temp-description">{dados.weather[0].description}</h5>
