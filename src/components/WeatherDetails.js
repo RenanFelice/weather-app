@@ -40,7 +40,7 @@ const WeatherDetails = () => {
                                     <p>{daysOfWeek[dateWeek.getDay()]} </p> <p className='hifen'> - </p>
                                     <p>{dateHour}</p>
                                 </div>
-                                <img className="card-img-top" alt={item.weather[0].description} src={`https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`} />
+                                <img className="card-img-top" alt={item.weather[0].description} src={require(`../${item.weather[0].icon}.png`)} />
                                 <div className='WeatherDetails-card-temp'>
                                     <p className='temp-max'>{Math.floor(item.main.temp_max)}º</p>
                                     <p className='temp-min'>{Math.floor(item.main.temp_min)}º</p>
