@@ -5,9 +5,8 @@ import { Link } from "react-router-dom";
 
 const WeatherCard = () => {
     const { dados, unit, isFetching, weatherForecastFetch, city } = useContext(WeatherCardContext)
+    console.log('weather card', dados)
     const result = <>
-
-
         {dados && dados.cod !== '404' ?
             <Link onClick={e => weatherForecastFetch(city, unit)} style={{ color: 'inherit', textDecoration: 'inherit' }} to={`${dados.name}`}>
                 <div className="card">

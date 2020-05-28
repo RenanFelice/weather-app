@@ -14,7 +14,7 @@ function App() {
     <div className="App">
       <WeatherCardProvider>
         <NavBar />
-        
+        <div className='App-body'>
         <Switch>
           <Route exact path='/' render={(routProps) => (
             <>
@@ -24,7 +24,7 @@ function App() {
           )}/>
           <Route exact path='/:weatherdetails' render={(routeProps) => <WeatherDetails {...routeProps}/>} />
         </Switch>
-        
+        </div>
       </WeatherCardProvider>
     </div>
   );
