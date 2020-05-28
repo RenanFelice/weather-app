@@ -7,8 +7,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 
 const WeatherDetails = () => {
-    const { forecastDados, isFetching } = useContext(WeatherCardContext)
-    console.log('weather details', forecastDados)
+    const { forecastDados, isFetchingForecast } = useContext(WeatherCardContext)
     const result = <>
         {forecastDados && forecastDados.cod !== '404' ?
             <div className='WeatherDetails'>
@@ -63,7 +62,7 @@ const WeatherDetails = () => {
 
     return (
         <>
-            {isFetching ? <div className="loader">Loading...</div> : result}
+            {isFetchingForecast ? <div className="loader">Loading...</div> : result}
         </>
     );
 }

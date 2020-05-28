@@ -7,7 +7,8 @@ const WeatherCardProvider = (props) => {
     const [forecastDados, setForecastDados] = useState()
     const [unit, setUnit] = useState('Metric')
     const [city, setCity] = useState('Santo Andre')
-    const [isFetching, setIsFetching] = useState(false)
+    const [isFetching, setIsFetching] = useState(true)
+    const [isFetchingForecast, setIsFetchingForecast] = useState(true)
 
     const weatherFetch = async (city, unit) => {
         try{
@@ -22,10 +23,10 @@ const WeatherCardProvider = (props) => {
     }
     const weatherForecastFetch = async (city, unit) => {
         try{
-            setIsFetching(true)
+            setIsFetchingForecast(true)
             const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=${unit}&APPID=e1e6c46a413f8e705380a3b99caacb6e`
             await fetch(weatherUrl).then(resp => resp.json()).then(data => setForecastDados(data))
-            setIsFetching(false)
+            setIsFetchingForecast(false)
         } catch(e){
             console.log(e)
         }
@@ -33,7 +34,7 @@ const WeatherCardProvider = (props) => {
     }
     
     useEffect(e => {
-        if(!city) return
+        
         const fetcher = async () => await weatherFetch(city, unit)
         const fetcher2 = async () => await weatherForecastFetch(city, unit)
         fetcher()
@@ -42,7 +43,7 @@ const WeatherCardProvider = (props) => {
     },[unit,city])
    
     return ( 
-        <WeatherCardContext.Provider value={{dados, weatherFetch, unit, setUnit, setCity, city, isFetching, setIsFetching, weatherForecastFetch, forecastDados}}>
+        <WeatherCardContext.Provider value={{dados, weatherFetch, unit, setUnit, setCity, city, isFetching, setIsFetching, weatherForecastFetch, forecastDados, isFetchingForecast}}>
             {props.children}
         </WeatherCardContext.Provider>
      );
